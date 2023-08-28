@@ -191,6 +191,11 @@ type Metadataer interface {
 	Metadata(ctx context.Context) (Metadata, error)
 }
 
+// DirMetadataer is an optional interface for Fs
+type DirMetadataer interface {
+	NewObjectDir(ctx context.Context, remote string) (Object, error)
+}
+
 // FullObjectInfo contains all the read-only optional interfaces
 //
 // Use for checking making wrapping ObjectInfos implement everything
